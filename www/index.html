@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Grph.in</title>
+    <link href='assets/grph.css' rel='stylesheet'/>
+  </head>
+  <body>
+    <div id='frame'>
+      <div id='body'>
+        <div id='panel'>
+          <h1>Grph.in</h1>
+          <hr/>
+          <b>Click on a node to see more details!</b><br/><br/>
+          <b>About this Graph:</b><br/><br/>
+          How are employees moving between companies?<br/><br/>
+          We seek to answer this question by building a directed graph, in which:
+          <ul>
+          <li>Nodes represent companies</li>
+          <li>Edges represent the flow of people between two companies </li>
+          </ul>
+          <b>About the Data:</b><br/><br/>
+          We parsed 7,207,357 LinkedIn public profiles - which resulted in a graph containing 3,215,402 nodes and 3,574,637 unique edges.<br/><br/>
+          Next we filter out “uninteresting” nodes and edges by setting a threshold. In this case, nodes and edges that appeared in <40 profiles are discarded (with a few whitelisted exemptions). The result is a disconnected graph with isolated groups of nodes and edges.<br/><br/>
+          Next, we build a single connected graph, by running breadth-first-search from the single largest company node (IBM) in the original graph.<br/><br/>
+          The resulting graph has 51 companies, along with 121 unique edges.<br/><br/>
+        </div>
+        <div id='content'>
+          <canvas id='viewport'></canvas>
+        </div>
+      </div>
+    </div>
+    <script src='assets/jquery-1.8.2.min.js'></script>
+    <script src='assets/arbor.js'></script>
+    <script src='assets/arbor-graphics.js'></script>
+    <script src='assets/arbor-tween.js'></script>
+    <script src='assets/grph.js'></script>
+  </body>
+</html>

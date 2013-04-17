@@ -1,0 +1,41 @@
+package edu.gatech.comp.social.grphin;
+import java.util.HashMap;
+import java.util.Map;
+public class NameUtil {
+  private static Map<String, String> normalizedNames;
+  public static String normalize(String name) {
+    if (normalizedNames == null) {
+      normalizedNames = new HashMap<String, String>();
+normalizedNames.put("ABNAMROMeesPierson", "ABNAMRO");
+normalizedNames.put("SelfEmployed", "Self");
+normalizedNames.put("FujitsuSiemensComputers", "Fujitsu");
+normalizedNames.put("GeneralMotors", "GE");
+normalizedNames.put("GenworthFinancial", "GE");
+normalizedNames.put("SelfEmployed", "Selfemployed");
+normalizedNames.put("AstraZeneca", "Astra");
+normalizedNames.put("Freelance", "freelance");
+normalizedNames.put("AonRiskSolutions", "Aon");
+normalizedNames.put("Belastingdienst", "ING");
+normalizedNames.put("PSAPeugeotCitron", "GE");
+normalizedNames.put("FujitsuSiemensComputers", "Siemens");
+normalizedNames.put("ReedElsevier", "Elsevier");
+normalizedNames.put("CapGemini", "GE");
+normalizedNames.put("Selfemployed", "SelfEmployed");
+normalizedNames.put("Freelancer", "Freelance");
+normalizedNames.put("freelance", "Freelance");
+normalizedNames.put("Genpact", "GE");
+normalizedNames.put("STEricsson", "Ericsson");
+normalizedNames.put("AirtelVodafone", "Vodafone");
+normalizedNames.put("selfemployed", "SelfEmployed");
+normalizedNames.put("Selfemployed", "selfemployed");
+normalizedNames.put("ArthurAndersen", "Andersen");
+normalizedNames.put("StanleyBlackDecker", "BlackDecker");
+normalizedNames.put("VictoriasSecret", "Victorias");
+    }
+    name = name.replaceAll("[^a-zA-Z0-9]", "");
+    if (normalizedNames.containsKey(name)) {
+      name = normalizedNames.get(name);
+    }
+    return name;
+  }
+}
